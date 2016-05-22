@@ -6,7 +6,7 @@ var applescript = require('applescript');
 module.exports = function(homebridge) {
 	Service = homebridge.hap.Service;
 	Characteristic = homebridge.hap.Characteristic;
-	homebridge.registerAccessory('homebridge-applescript', 'Applescript', ApplescriptAccessory);
+	homebridge.registerAccessory('homebridge-applescript-file', 'ApplescriptFile', ApplescriptAccessory);
 }
 
 function ApplescriptAccessory(log, config) {
@@ -23,7 +23,7 @@ ApplescriptAccessory.prototype.setState = function(powerOn, callback) {
 	var prop = state + 'Command';
 	var command = accessory[prop].replace(/''/g, '"');
 
-	applescript.execString(command, done);
+	applescript.execFile(command, done);
 
 	function done(err, rtn) {
 		if (err) {

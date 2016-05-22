@@ -6,14 +6,14 @@
 		"pin": "031-45-154"
 	},
 
-	"description": "This is an example configuration for the Applescript homebridge plugin",
+	"description": "This is an example configuration for the Applescript File homebridge plugin",
 
 	"accessories": [
 		{
-			"accessory": "Applescript",
+			"accessory": "ApplescriptFile",
 			"name": "Security Camera",
-			"on": "tell application ''Evocam'' to open ''Security.evocamsettings''",
-			"off": "quit application ''Evocam''"
+			"on": "/Users/bendodson/Documents/Scripts/cameraOn.applescript",
+			"off": "/Users/bendodson/Documents/Scripts/cameraOff.applescript"
 		}
 	]
 }
